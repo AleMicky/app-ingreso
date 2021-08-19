@@ -17,11 +17,12 @@ class InputDecorations {
             width: 2,
           ),
         ),
+        filled: true,
         labelText: labelText,
         labelStyle: TextStyle(
           color: Colors.grey,
         ),
-        prefixIcon: prefixIcon != null
+        suffixIcon: prefixIcon != null
             ? Icon(
                 prefixIcon,
                 color: Colors.deepPurple,

@@ -118,7 +118,7 @@ class _LoginForm extends StatelessWidget {
                         loginForm.isLoading = false;
                       }
                     },
-            )
+            ),
           ],
         ),
       ),

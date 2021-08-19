@@ -22,6 +22,9 @@ class InputDecorations {
         labelStyle: TextStyle(
           color: Colors.grey,
         ),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(5.0),
+        ),
         suffixIcon: prefixIcon != null
             ? Icon(
                 prefixIcon,

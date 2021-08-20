@@ -10,6 +10,7 @@ class EntryFormProvider extends ChangeNotifier {
   String _cedula = '';
   String _calle = '';
   String _numero = '';
+  String _pasajero = 'no';
 
   bool _placaBool = false;
   bool _empresaBool = false;
@@ -17,6 +18,9 @@ class EntryFormProvider extends ChangeNotifier {
   bool _cedulaBool = false;
   bool _calleBool = false;
   bool _numeroBool = false;
+  bool _pasajeroBool = false;
+  bool _fotoPlaca = false;
+  bool _fotoCedula = false;
 
   int get idTipoIngreso => _idTipoIngreso;
   String get placa => _placa;
@@ -25,6 +29,7 @@ class EntryFormProvider extends ChangeNotifier {
   String get cedula => _cedula;
   String get calle => _calle;
   String get numero => _numero;
+  String get pasajero => _pasajero;
 
   bool get placaBool => _placaBool;
   bool get empresaBool => _empresaBool;
@@ -32,6 +37,9 @@ class EntryFormProvider extends ChangeNotifier {
   bool get cedulaBool => _cedulaBool;
   bool get calleBool => _calleBool;
   bool get numeroBool => _numeroBool;
+  bool get pasajeroBool => _pasajeroBool;
+  bool get fotoPlaca => _fotoPlaca;
+  bool get fotoCedula => _fotoCedula;
 
   set idTipoIngreso(int value) {
     _idTipoIngreso = value;
@@ -68,6 +76,11 @@ class EntryFormProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  set pasajero(String value) {
+    _pasajero = value;
+    notifyListeners();
+  }
+
   void iniciarEvento(TipoIngreso tipo) {
     _placaBool = tipo.placa;
     _empresaBool = tipo.empresa;
@@ -75,6 +88,9 @@ class EntryFormProvider extends ChangeNotifier {
     _cedulaBool = tipo.cedula;
     _calleBool = tipo.calle;
     _numeroBool = tipo.numero;
+    _pasajeroBool = tipo.pasajero;
+    _fotoPlaca = tipo.fotoPlaca;
+    _fotoCedula = tipo.fotoCedula;
     notifyListeners();
   }
 

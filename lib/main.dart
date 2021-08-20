@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Ingreso App',
         debugShowCheckedModeBanner: false,
-        initialRoute: 'entry',
+        initialRoute: 'checking',
         routes: {
           'checking': (_) => CheckAuthPage(),
           'home': (BuildContext context) => HomePage(),

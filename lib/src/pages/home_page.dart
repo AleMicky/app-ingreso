@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ingreso/src/providers/search_form_provider.dart';
-import 'package:ingreso/src/services/auth_service.dart';
+// import 'package:ingreso/src/services/auth_service.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
@@ -8,7 +8,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final authService = Provider.of<AuthService>(context, listen: false);
+    // final authService = Provider.of<AuthService>(context, listen: false);
 
     return Scaffold(
       body: SafeArea(

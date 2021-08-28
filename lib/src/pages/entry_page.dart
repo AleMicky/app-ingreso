@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ingreso/src/models/tipoIngreso.dart';
 import 'package:ingreso/src/providers/entry_form_provider.dart';
+import 'package:ingreso/src/services/ingresar_service.dart';
 import 'package:ingreso/src/services/tipo_ingreso_service.dart';
 import 'package:ingreso/src/ui/input_decorations.dart';
 import 'package:provider/provider.dart';
@@ -248,12 +249,23 @@ class _FormRntry extends StatelessWidget {
                               //vertical: 15,
                               ),
                           child: Text(
-                            'Registrar',
+                            entryForm.isLoading ? 'Espera' : 'Registrar',
                             style: TextStyle(
                               color: Colors.white,
                             ),
                           )),
-                      onPressed: () {},
+                      onPressed: entryForm.isLoading
+                          ? null
+                          : () async {
+                              FocusScope.of(context).unfocus();
+                              Provider.of<IngresarService>(
+                                context,
+                                listen: false,
+                              );
+                              if (!entryForm.isValidForm()) return;
+                              entryForm.isLoading = true;
+                              print(entryForm.idTipoIngreso);
+                            },
                     ),
                   ),
                 ],
@@ -278,7 +290,7 @@ class _FormRntry extends StatelessWidget {
                         color: Colors.white,
                       ),
                     )),
-                onPressed: () {},
+                onPressed: () => Navigator.pop(context),
               ),
             ),
           ],

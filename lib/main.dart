@@ -4,6 +4,7 @@ import 'package:ingreso/src/pages/entry_page.dart';
 import 'package:ingreso/src/pages/home_page.dart';
 import 'package:ingreso/src/pages/login_page.dart';
 import 'package:ingreso/src/services/auth_service.dart';
+import 'package:ingreso/src/services/ingresar_service.dart';
 import 'package:ingreso/src/services/notifications_service.dart';
 import 'package:ingreso/src/services/tipo_ingreso_service.dart';
 import 'package:ingreso/src/theme/tema.dart';
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => new AuthService()),
         ChangeNotifierProvider(create: (_) => new TipoIngresoService()),
+        ChangeNotifierProvider(create: (_) => new IngresarService()),
       ],
       child: MaterialApp(
         title: 'Ingreso App',

@@ -3,7 +3,16 @@ import 'package:ingreso/src/models/tipoIngreso.dart';
 
 class EntryFormProvider extends ChangeNotifier {
   GlobalKey<FormState> formKey = new GlobalKey<FormState>();
-  int _idTipoIngreso = 0;
+
+  bool _isLoading = false;
+  bool get isLoading => _isLoading;
+
+  set isLoading(bool value) {
+    _isLoading = value;
+    notifyListeners();
+  }
+
+  int _idTipoIngreso = 1;
   String _placa = '';
   String _empresa = '';
   String _nombre = '';
